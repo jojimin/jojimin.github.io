@@ -1,12 +1,13 @@
 ---
-title: 为主题安装scss插件时的一个小插曲
+title: 配置hexo-renderer-sass时的小插曲
 date: 2019-10-20 15:28:11
 tags: [hexo, nodejs]
+categories: hexo
 ---
 
 在配置snark主题时<https://github.com/Litreily/hexo-theme-snark>，需要安装两个渲染插件:
 
-```shell
+```
 npm install hexo-renderer-pug --save
 npm install hexo-renderer-sass --save
 ```
