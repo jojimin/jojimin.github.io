@@ -1,15 +1,17 @@
 ---
 title: 为主题安装scss插件时的一个小插曲
 date: 2019-10-20 15:28:11
-tags: hexo nodejs
+tags: [hexo, nodejs]
 ---
 
-在配置snark主题时，需要安装两个渲染插件:
+在配置snark主题时<https://github.com/Litreily/hexo-theme-snark>，需要安装两个渲染插件:
 
 ```shell
 npm install hexo-renderer-pug --save
 npm install hexo-renderer-sass --save
 ```
+
+<!--more-->
 
 前者为模板渲染引擎，后者为css的预处理器。
 
