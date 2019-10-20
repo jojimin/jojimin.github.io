@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://pyonpyon.top/"/>
-  <updated>2019-10-20T08:09:23.797Z</updated>
+  <updated>2019-10-20T08:21:49.743Z</updated>
   <id>https://pyonpyon.top/</id>
   
   <author>
@@ -17,49 +17,27 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>Hello World</title>
-    <link href="https://pyonpyon.top/2019/10/20/hello-world/"/>
-    <id>https://pyonpyon.top/2019/10/20/hello-world/</id>
-    <published>2019-10-20T08:09:23.797Z</published>
-    <updated>2019-10-20T08:09:23.797Z</updated>
-    
-    <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><pre><code class="bash">$ hexo new &quot;My New Post&quot;</code></pre><p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p><a id="more"></a><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><pre><code class="bash">$ hexo server</code></pre><p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><pre><code class="bash">$ hexo generate</code></pre><p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><pre><code class="bash">$ hexo deploy</code></pre><p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.io/docs/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;documentation&lt;/a&gt; for more info. If you get any problems when using Hexo, you can find the answer in &lt;a href=&quot;https://hexo.io/docs/troubleshooting.html&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;troubleshooting&lt;/a&gt; or you can ask me on &lt;a href=&quot;https://github.com/hexojs/hexo/issues&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;GitHub&lt;/a&gt;.&lt;/p&gt;
-&lt;h2 id=&quot;Quick-Start&quot;&gt;&lt;a href=&quot;#Quick-Start&quot; class=&quot;headerlink&quot; title=&quot;Quick Start&quot;&gt;&lt;/a&gt;Quick Start&lt;/h2&gt;&lt;h3 id=&quot;Create-a-new-post&quot;&gt;&lt;a href=&quot;#Create-a-new-post&quot; class=&quot;headerlink&quot; title=&quot;Create a new post&quot;&gt;&lt;/a&gt;Create a new post&lt;/h3&gt;&lt;pre&gt;&lt;code class=&quot;bash&quot;&gt;$ hexo new &amp;quot;My New Post&amp;quot;&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;More info: &lt;a href=&quot;https://hexo.io/docs/writing.html&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Writing&lt;/a&gt;&lt;/p&gt;
-    
-    </summary>
-    
-    
-    
-  </entry>
-  
-  <entry>
     <title>为主题安装scss插件时的一个小插曲</title>
     <link href="https://pyonpyon.top/2019/10/20/%E4%B8%BA%E4%B8%BB%E9%A2%98%E5%AE%89%E8%A3%85scss%E6%8F%92%E4%BB%B6%E6%97%B6%E7%9A%84%E4%B8%80%E4%B8%AA%E5%B0%8F%E6%8F%92%E6%9B%B2/"/>
     <id>https://pyonpyon.top/2019/10/20/为主题安装scss插件时的一个小插曲/</id>
     <published>2019-10-20T07:28:11.000Z</published>
-    <updated>2019-10-20T08:09:23.797Z</updated>
+    <updated>2019-10-20T08:21:49.743Z</updated>
     
-    <content type="html"><![CDATA[<p>在配置snark主题时，需要安装两个渲染插件:</p><pre><code class="shell">npm install hexo-renderer-pug --savenpm install hexo-renderer-sass --save</code></pre><p>前者为模板渲染引擎，后者为css的预处理器。</p><p>经过简单的安装配置，本地验证无误后便把更新提交上了git，等待travis-ci的部署。却不料，线上的站点没有任何样式，于是到travis页面上查看发现如下错误日志：</p><img src="/2019/10/20/为主题安装scss插件时的一个小插曲/sass1.JPG" title="sass错误日志"><p>简单说，就是找不到travis上linux虚拟机系统对应版本的binding文件，只有我本地windows系统的。css处理器出了问题，自然就没有样式了。</p><p>但是，我的本地环境通过npm是无法获取到linux版本的文件的。于是，偷懒了一下，去scss的git发布页<a href="https://github.com/sass/node-sass/releases" target="_blank" rel="noopener">https://github.com/sass/node-sass/releases</a>上找到linux-x64-72版本的binding文件，按照日志中指定路径放了进去，再提交，便成功渲染了css样式。</p>]]></content>
+    <content type="html"><![CDATA[<p>在配置snark主题时<a href="https://github.com/Litreily/hexo-theme-snark" target="_blank" rel="noopener">https://github.com/Litreily/hexo-theme-snark</a>，需要安装两个渲染插件:</p><pre><code class="shell">npm install hexo-renderer-pug --savenpm install hexo-renderer-sass --save</code></pre><a id="more"></a><p>前者为模板渲染引擎，后者为css的预处理器。</p><p>经过简单的安装配置，本地验证无误后便把更新提交上了git，等待travis-ci的部署。却不料，线上的站点没有任何样式，于是到travis页面上查看发现如下错误日志：</p><img src="/2019/10/20/为主题安装scss插件时的一个小插曲/sass1.JPG" title="sass错误日志"><p>简单说，就是找不到travis上linux虚拟机系统对应版本的binding文件，只有我本地windows系统的。css处理器出了问题，自然就没有样式了。</p><p>但是，我的本地环境通过npm是无法获取到linux版本的文件的。于是，偷懒了一下，去scss的git发布页<a href="https://github.com/sass/node-sass/releases" target="_blank" rel="noopener">https://github.com/sass/node-sass/releases</a>上找到linux-x64-72版本的binding文件，按照日志中指定路径放了进去，再提交，便成功渲染了css样式。</p>]]></content>
     
     <summary type="html">
     
-      
-      
-        &lt;p&gt;在配置snark主题时，需要安装两个渲染插件:&lt;/p&gt;
+      &lt;p&gt;在配置snark主题时&lt;a href=&quot;https://github.com/Litreily/hexo-theme-snark&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;https://github.com/Litreily/hexo-theme-snark&lt;/a&gt;，需要安装两个渲染插件:&lt;/p&gt;
 &lt;pre&gt;&lt;code class=&quot;shell&quot;&gt;npm install hexo-renderer-pug --save
-npm install hexo-renderer-sass --save&lt;/code&gt;&lt;/p
-      
+npm install hexo-renderer-sass --save&lt;/code&gt;&lt;/pre&gt;
     
     </summary>
     
     
     
-      <category term="hexo nodejs" scheme="https://pyonpyon.top/tags/hexo-nodejs/"/>
+      <category term="hexo" scheme="https://pyonpyon.top/tags/hexo/"/>
+    
+      <category term="nodejs" scheme="https://pyonpyon.top/tags/nodejs/"/>
     
   </entry>
   
