@@ -4,12 +4,18 @@
   
     
     <entry>
-      <title>为主题安装scss插件时的一个小插曲</title>
-      <link href="/2019/10/20/%E4%B8%BA%E4%B8%BB%E9%A2%98%E5%AE%89%E8%A3%85scss%E6%8F%92%E4%BB%B6%E6%97%B6%E7%9A%84%E4%B8%80%E4%B8%AA%E5%B0%8F%E6%8F%92%E6%9B%B2/"/>
-      <url>/2019/10/20/%E4%B8%BA%E4%B8%BB%E9%A2%98%E5%AE%89%E8%A3%85scss%E6%8F%92%E4%BB%B6%E6%97%B6%E7%9A%84%E4%B8%80%E4%B8%AA%E5%B0%8F%E6%8F%92%E6%9B%B2/</url>
+      <title>配置hexo-renderer-sass时的小插曲</title>
+      <link href="/2019/10/20/%E9%85%8D%E7%BD%AEhexo-renderer-sass%E6%97%B6%E7%9A%84%E5%B0%8F%E6%8F%92%E6%9B%B2/"/>
+      <url>/2019/10/20/%E9%85%8D%E7%BD%AEhexo-renderer-sass%E6%97%B6%E7%9A%84%E5%B0%8F%E6%8F%92%E6%9B%B2/</url>
       
-        <content type="html"><![CDATA[<p>在配置snark主题时<a href="https://github.com/Litreily/hexo-theme-snark" target="_blank" rel="noopener">https://github.com/Litreily/hexo-theme-snark</a>，需要安装两个渲染插件:</p><pre><code class="shell">npm install hexo-renderer-pug --savenpm install hexo-renderer-sass --save</code></pre><a id="more"></a><p>前者为模板渲染引擎，后者为css的预处理器。</p><p>经过简单的安装配置，本地验证无误后便把更新提交上了git，等待travis-ci的部署。却不料，线上的站点没有任何样式，于是到travis页面上查看发现如下错误日志：</p><img src="/2019/10/20/为主题安装scss插件时的一个小插曲/sass1.JPG" title="sass错误日志"><p>简单说，就是找不到travis上linux虚拟机系统对应版本的binding文件，只有我本地windows系统的。css处理器出了问题，自然就没有样式了。</p><p>但是，我的本地环境通过npm是无法获取到linux版本的文件的。于是，偷懒了一下，去scss的git发布页<a href="https://github.com/sass/node-sass/releases" target="_blank" rel="noopener">https://github.com/sass/node-sass/releases</a>上找到linux-x64-72版本的binding文件，按照日志中指定路径放了进去，再提交，便成功渲染了css样式。</p>]]></content>
+        <content type="html"><![CDATA[<p>在配置snark主题时<a href="https://github.com/Litreily/hexo-theme-snark" target="_blank" rel="noopener">https://github.com/Litreily/hexo-theme-snark</a>，需要安装两个渲染插件:</p><pre><code>npm install hexo-renderer-pug --savenpm install hexo-renderer-sass --save</code></pre><a id="more"></a><p>前者为模板渲染引擎，后者为css的预处理器。</p><p>经过简单的安装配置，本地验证无误后便把更新提交上了git，等待travis-ci的部署。却不料，线上的站点没有任何样式，于是到travis页面上查看发现如下错误日志：</p><img src="/2019/10/20/配置hexo-renderer-sass时的小插曲/sass1.JPG" title="sass错误日志"><p>简单说，就是找不到travis上linux虚拟机系统对应版本的binding文件，只有我本地windows系统的。css处理器出了问题，自然就没有样式了。</p><p>但是，我的本地环境通过npm是无法获取到linux版本的文件的。于是，偷懒了一下，去scss的git发布页<a href="https://github.com/sass/node-sass/releases" target="_blank" rel="noopener">https://github.com/sass/node-sass/releases</a>上找到linux-x64-72版本的binding文件，按照日志中指定路径放了进去，再提交，便成功渲染了css样式。</p>]]></content>
       
+      
+      <categories>
+          
+          <category> hexo </category>
+          
+      </categories>
       
       
         <tags>
